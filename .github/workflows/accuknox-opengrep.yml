@@ -1,20 +1,13 @@
 name: AccuKnox Opengrep SAST
-
 on:
   push:
-    branches:
-      - feature/test
   pull_request:
-    branches:
-      - feature/test
-
 jobs:
   accuknox-cicd:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: "Run AccuKnox SAST: Opengrep"
         uses: accuknox/sast-scan-opengrep-action@1.0.0
         with:
